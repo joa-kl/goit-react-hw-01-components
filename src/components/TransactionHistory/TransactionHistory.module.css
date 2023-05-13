@@ -1,0 +1,33 @@
+.table {
+    background: #f5ffff;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 50px auto 50px auto;
+}
+.table th {
+    background-color:rgb(64, 205, 224);
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    
+}
+
+.table tr:nth-child(even) {
+    background-color:rgb(222, 226, 226);
+
+}
+
+
+.table td {
+    border: 1px solid #e3eef7;
+    padding: 10px 15px;
+    position: relative;
+    transition: all 0.5s ease;
+    padding-inline: 60px;
+    font-size: 12px;
+    color: grey;
+    text-transform: capitalize;
+}
