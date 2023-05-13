@@ -1,36 +1,43 @@
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
+import { getRandomColor } from 'utils/getRandomColor';
 
-const Statistics = ({title, stats}) => {
+export const Statistics = ({ title, stats }) => {
+    const { label, percentage } = stats;
     return (
-        <section class="statistics">
-            <h2 class="title">Upload stats</h2>
-
-            <ul class="stat-list">
-                <li class="item">
-                    <span class="label">.docx</span>
-                    <span class="percentage">4%</span>
-                </li>
-                <li class="item">
-                    <span class="label">.mp3</span>
-                    <span class="percentage">14%</span>
-                </li>
-                <li class="item">
-                    <span class="label">.pdf</span>
-                    <span class="percentage">41%</span>
-                </li>
-                <li class="item">
-                    <span class="label">.mp4</span>
-                    <span class="percentage">12%</span>
-                </li>
-            </ul>
+        <section className={css.statistics}>
+            {title && <h2 className={css.title}>{title}</h2>}
+            <div className={css.statsDiv}>
+                <ul className={css.statsList}>
+                    {stats.map(element => {
+                        return (
+                            <li
+                                style={{backgroundColor: getRandomColor()}}
+                                className={css.item}
+                                key={element.id}
+                            >
+                                <span className={css.label}>{element.label}</span>
+                                <span className={css.percentage}>{element.percentage}%</span>
+                            </li>
+                        )
+                    })}
+            
+                </ul>
+            </div>
+               
         </section>
     )
 }
 
 Statistics.propTypes = {
-    
-
+    title: PropTypes.string,
+    stats: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number,
+            label: PropTypes.string,
+            percentage: PropTypes.string
+        })
+    ),
 }
 
 export default Statistics;
