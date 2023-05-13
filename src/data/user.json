@@ -1,4 +1,4 @@
-const user = {
+{
     "username": "Jacques Gluke",
     "tag": "jgluke",
     "location": "Ocho Rios, Jamaica",
@@ -9,5 +9,3 @@ const user = {
       "likes": 1308
   }
 }
-
-export default user
