@@ -22,7 +22,6 @@ export const Statistics = ({ title, stats }) => {
             
                 </ul>
             </div>
-               
         </section>
     )
 }
