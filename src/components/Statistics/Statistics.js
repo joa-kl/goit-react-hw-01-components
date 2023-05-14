@@ -8,8 +8,7 @@ export const Statistics = ({ title, stats }) => {
             {title && <h2 className={css.title}>{title}</h2>}
             <div className={css.statsDiv}>
                 <ul className={css.statsList}>
-                    {stats.map(element => {
-                        return (
+                    {stats.map(element => (
                             <li
                                 style={{ backgroundColor: getRandomHexColor()}}
                                 className={css.item}
@@ -19,7 +18,7 @@ export const Statistics = ({ title, stats }) => {
                                 <span className={css.percentage}>{element.percentage}%</span>
                             </li>
                         )
-                    })}
+                    )}
             
                 </ul>
             </div>
